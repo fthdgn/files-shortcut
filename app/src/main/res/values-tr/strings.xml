@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Dosyalar</string>
+    <string name="app_name">Dosyalar Kısayolu</string>
+    <string name="images">Resimler</string>
+    <string name="audio">Ses</string>
+    <string name="downloads">İndirmeler</string>
+    <string name="videos">Videolar</string>
+    <string name="shortcut_name">Dosyalar</string>
+    <string name="shortcut_disabled">Bu kısayol devredışı bırakılmış.</string>
 </resources>

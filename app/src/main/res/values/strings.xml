@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Files</string>
+    <string name="app_name">Files Shortcut</string>
+    <string name="shortcut_name">Files</string>
+    <string name="images">Images</string>
+    <string name="videos">Videos</string>
+    <string name="audio">Audio</string>
+    <string name="downloads">Downloads</string>
+    <string name="shortcut_disabled">This shortcut is disabled.</string>
 </resources>

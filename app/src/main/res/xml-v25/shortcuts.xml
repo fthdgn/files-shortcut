@@ -1,0 +1,94 @@
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_root_download"
+        android:shortcutDisabledMessage="@string/shortcut_disabled"
+        android:shortcutId="downloads"
+        android:shortcutLongLabel="@string/downloads"
+        android:shortcutShortLabel="@string/downloads">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.android.documentsui.FilesActivity"
+            android:targetPackage="com.android.documentsui">
+            <extra
+                android:name="android.content.extra.SHOW_ADVANCED"
+                android:value="true" />
+            <extra
+                android:name="android.content.extra.SHOW_FILESIZE"
+                android:value="true" />
+            <extra
+                android:name="android.content.extra.FANCY"
+                android:value="true" />
+        </intent>
+    </shortcut>
+
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_doc_audio"
+        android:shortcutDisabledMessage="@string/shortcut_disabled"
+        android:shortcutId="audio"
+        android:shortcutLongLabel="@string/audio"
+        android:shortcutShortLabel="@string/audio">
+        <intent
+            android:action="android.provider.action.BROWSE"
+            android:category="android.intent.category.DEFAULT"
+            android:data="content://com.android.providers.media.documents/root/audio_root">
+            <extra
+                android:name="android.content.extra.SHOW_ADVANCED"
+                android:value="true" />
+            <extra
+                android:name="android.content.extra.SHOW_FILESIZE"
+                android:value="true" />
+            <extra
+                android:name="android.content.extra.FANCY"
+                android:value="true" />
+        </intent>
+    </shortcut>
+
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_doc_video"
+        android:shortcutDisabledMessage="@string/shortcut_disabled"
+        android:shortcutId="videos"
+        android:shortcutLongLabel="@string/videos"
+        android:shortcutShortLabel="@string/videos">
+        <intent
+            android:action="android.provider.action.BROWSE"
+            android:category="android.intent.category.DEFAULT"
+            android:data="content://com.android.providers.media.documents/root/videos_root">
+            <extra
+                android:name="android.content.extra.SHOW_ADVANCED"
+                android:value="true" />
+            <extra
+                android:name="android.content.extra.SHOW_FILESIZE"
+                android:value="true" />
+            <extra
+                android:name="android.content.extra.FANCY"
+                android:value="true" />
+        </intent>
+    </shortcut>
+
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_doc_image"
+        android:shortcutDisabledMessage="@string/shortcut_disabled"
+        android:shortcutId="images"
+        android:shortcutLongLabel="@string/images"
+        android:shortcutShortLabel="@string/images">
+        <intent
+            android:action="android.provider.action.BROWSE"
+            android:category="android.intent.category.DEFAULT"
+            android:data="content://com.android.providers.media.documents/root/images_root">
+            <extra
+                android:name="android.content.extra.SHOW_ADVANCED"
+                android:value="true" />
+            <extra
+                android:name="android.content.extra.SHOW_FILESIZE"
+                android:value="true" />
+            <extra
+                android:name="android.content.extra.FANCY"
+                android:value="true" />
+        </intent>
+    </shortcut>
+
+</shortcuts>
