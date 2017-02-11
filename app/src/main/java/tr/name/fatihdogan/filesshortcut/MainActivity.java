@@ -46,18 +46,21 @@ public class MainActivity extends Activity {
     /**
      * android.provider.DocumentsContract.Root.MIME_TYPE_ITEM
      */
-    private static final String MIME_TYPE_ITEM = "vnd.android.document/root";
+    public static final String MIME_TYPE_ITEM = "vnd.android.document/root";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        String s = "content://com.android.externalstorage.documents/19F5-1F01:Android";
+
+
+
+
         Intent intent = new Intent();
         intent.setAction(ACTION_BROWSE);
         intent.addCategory(Intent.CATEGORY_DEFAULT);
-        intent.setType(MIME_TYPE_ITEM);
-        intent.setData(new Uri.Builder().scheme(ContentResolver.SCHEME_CONTENT)
-                .authority(DOCUMENT_AUTHORITY).appendPath(PATH_ROOT).appendPath(DOCUMENT_ROOT_PRIMARY_EMULATED).build());
+        intent.setDataAndType(Uri.parse(s), MIME_TYPE_ITEM);
         intent.putExtra(EXTRA_SHOW_ADVANCED, true);
         intent.putExtra(EXTRA_FANCY_FEATURES, true);
         intent.putExtra(EXTRA_SHOW_FILESIZE, true);
