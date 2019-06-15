@@ -1,0 +1,20 @@
+/**
+ * These file is an example for APK signing.
+ * You may create signingDebug.gradle or signingRelease.gradle files.
+ * You can use this format on these files.
+ */
+android {
+    signingConfigs {
+        debug/*release*/ {
+            storeFile file("path/to/file")
+            storePassword "storePassword123"
+            keyAlias "myKeyAlias"
+            keyPassword "keyPassword123"
+        }
+    }
+	buildTypes {
+        debug/*release*/ {
+            signingConfig signingConfigs.debug/*release*/
+        }
+    }
+}

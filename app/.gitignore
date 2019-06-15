@@ -1,1 +1,3 @@
 /build
+signingRelease.gradle
+signingDebug.gradle

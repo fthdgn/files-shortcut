@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 
 public class MainActivity extends Activity {
@@ -11,22 +12,22 @@ public class MainActivity extends Activity {
     /**
      * android.provider.DocumentsContract.EXTRA_SHOW_ADVANCED
      */
-    public static final String EXTRA_SHOW_ADVANCED = "android.content.extra.SHOW_ADVANCED";
+    private static final String EXTRA_SHOW_ADVANCED = "android.content.extra.SHOW_ADVANCED";
 
     /**
      * android.provider.DocumentsContract.EXTRA_SHOW_FILESIZE
      */
-    public static final String EXTRA_SHOW_FILESIZE = "android.content.extra.SHOW_FILESIZE";
+    private static final String EXTRA_SHOW_FILESIZE = "android.content.extra.SHOW_FILESIZE";
 
     /**
      * android.provider.DocumentsContract.EXTRA_FANCY_FEATURES
      */
-    public static final String EXTRA_FANCY_FEATURES = "android.content.extra.FANCY";
+    private static final String EXTRA_FANCY_FEATURES = "android.content.extra.FANCY";
 
     /**
      * android.provider.DocumentsContract.ACTION_BROWSE
      */
-    public static final String ACTION_BROWSE = "android.provider.action.BROWSE";
+    private static final String ACTION_BROWSE = "android.provider.action.BROWSE";
 
     /**
      * android.os.storage.VolumeInfo.DOCUMENT_AUTHORITY
@@ -53,7 +54,15 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         Intent intent = new Intent();
-        intent.setAction(ACTION_BROWSE);
+        switch (Build.VERSION.SDK_INT) {
+            case Build.VERSION_CODES.P: //28
+            case Build.VERSION_CODES.O_MR1: //27
+            case Build.VERSION_CODES.O: //26
+                intent.setAction(Intent.ACTION_VIEW);
+                break;
+            default:
+                intent.setAction(ACTION_BROWSE);
+        }
         intent.addCategory(Intent.CATEGORY_DEFAULT);
         intent.setType(MIME_TYPE_ITEM);
         intent.setData(new Uri.Builder().scheme(ContentResolver.SCHEME_CONTENT)

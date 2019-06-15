@@ -1,19 +1,19 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion 28
+    buildToolsVersion "28.0.2"
     defaultConfig {
         applicationId "tr.name.fatihdogan.filesshortcut"
         minSdkVersion 24
-        targetSdkVersion 25
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -22,3 +22,15 @@ android {
 dependencies {
 
 }
+
+/**
+ * Signing files.
+ * For file format look at signingExample.gradle
+ */
+if (file('signingDebug.gradle').exists()) {
+    apply from: 'signingDebug.gradle'
+}
+if (file('signingRelease.gradle').exists()) {
+    apply from: 'signingRelease.gradle'
+}
+
